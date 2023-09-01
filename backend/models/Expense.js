@@ -1,23 +1,46 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
 
-const ExpenseSchema = new Schema({
+const ExpenseSchema = new mongoose.Schema({
+    name:{
+        type: String,
+        ref:'Category',
+        require: true,
+    },
     user:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
+        ref:'User',
+        require: true,
     },
-    date: {
-        type: Date,
-        default: Date.now,
-        required: true,
-    },
-    Category: {
+    info:{
         type: String,
-        required: true,
+        require: true,
     },
-    amount: {
+    amount:{
         type: Number,
         required: true,
     },
+    week:{
+        type:Number,
+        required: true,
+    },
+    month:{
+        type:Number,
+        required: true,
+    },
+    date:{
+        type: Date,
+        required: true,
+        default: Date.now
+    }
 });
-module.exports = mongoose.model('expenses', ExpenseSchema);
+
+ExpenseSchema.pre('save', function(next) {
+    if (this.isModified('name')) {
+      this.name = this.name.toUpperCase();
+    }
+    next();
+  });
+  
+
+const Expense = mongoose.model('Expense',ExpenseSchema);
+module.exports = Expense;

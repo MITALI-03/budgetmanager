@@ -6,7 +6,7 @@ const Footer = () => {
       <footer className="footer mt-auto py-3 bg-light text-center">
         <div className="container">
           <span className="text-muted">
-            Copyright &copy; iNotes. All rights reserved.
+            Copyright &copy; BudgetTracck. All rights reserved.
           </span>
         </div>
       </footer>

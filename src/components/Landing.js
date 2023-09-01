@@ -1,8 +1,5 @@
 import React from "react";
 import banner from "../assets/banner.jfif";
-//import banner6 from "../assets/banner6.jfif";
-//import banner7 from "../assets/banner7.jfif";
-
 import { Link } from "react-router-dom";
 
 //this is all about our landing page
@@ -38,9 +35,15 @@ const Landing = () => {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={banner} className=" d-block w-100 rounded mx-auto " alt="" />
+            <img
+              src={banner}
+              className=" d-block w-100 rounded mx-auto "
+              alt=""
+            />
             <div className="carousel-caption d-none my-auto d-md-block">
-              <h1 className="bg-dark text-white text-xl">Welcome To BudgetTrack</h1>
+              <h1 className="bg-dark text-white text-xl">
+                Welcome To BudgetTrack
+              </h1>
               <p>Manage your expense on cloud.</p>
             </div>
           </div>
@@ -93,8 +96,8 @@ const Landing = () => {
           <div className="feature col mb-4">
             <h3 className="text-primary">Security Guarantee</h3>
             <p>
-              We ensure that your expenses are highly secured in our database and
-              you can safely access your account and expenses.
+              We ensure that your expenses are highly secured in our database
+              and you can safely access your account and expenses.
             </p>
             <Link to="/login" className="btn btn-warning">
               Login
@@ -103,8 +106,8 @@ const Landing = () => {
           <div className="feature col mb-4">
             <h3 className="text-primary">Expenses on the cloud</h3>
             <p>
-              Your Expenses will be highly secured on the cloud and will be able to
-              access them easily via your account login credentials.
+              Your Expenses will be highly secured on the cloud and will be able
+              to access them easily via your account login credentials.
             </p>
             <Link to="/signup" className="btn btn-warning">
               Sign Up
@@ -112,9 +115,7 @@ const Landing = () => {
           </div>
           <div className="feature col mb-4">
             <h3 className="text-primary">Free to use</h3>
-            <p>
-              Create and Visualize your expenses without any charge. 
-            </p>
+            <p>Create and Visualize your expenses without any charge.</p>
             <Link to="/signup" className="btn btn-warning icon-link">
               Get Started
             </Link>
